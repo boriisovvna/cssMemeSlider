@@ -1,12 +1,18 @@
 body {
+    margin: 0;
+    min-height: 100vh;
     background-color: rgb(250, 255, 93);
 }
 .slider {
-    width: 20%;
+    width: min(28rem, 90%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
 }
 .slider-window {
     overflow: hidden;
+    flex-shrink: 0;
 }
 .slider-images {
     display: flex;
@@ -28,18 +34,19 @@ input[type="radio"] {
 .slider-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    justify-content: space-evenly;
     align-items: center;
+    gap: 3rem;
 }
 .slider-text-window {
+    width: 100%;
+    height: 9rem;
     overflow: hidden;
+    margin-bottom: 2rem;
+    align-self: start;
 }
 .slider-texts {
     display: flex;
     transition: transform 0.5s ease;
-    min-height: 9rem;
-    transition: 0.5s;
 }
 .text {
     flex: 0 0 100%;
@@ -49,18 +56,24 @@ input[type="radio"] {
     transition: 0.3s ease;
 }
 .slider-labels {
+    justify-self: center;
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.2rem, 1vw, 1rem);
+    margin-top: auto;
+}
+.slider-lab {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .slider-lab img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 .slider-lab img:hover {
-    transform: scale(1.7);
+    transform: scale(1.5);
 }
 #slide-1:checked ~ .slider-window .slider-images {
     transform: translateX(0);
@@ -125,7 +138,7 @@ input[type="radio"] {
 #slide-7:checked ~ .slider-info .slider-labels label[for="slide-7"] img,
 #slide-8:checked ~ .slider-info .slider-labels label[for="slide-8"] img,
 #slide-9:checked ~ .slider-info .slider-labels label[for="slide-9"] img {
-    transform: scale(1.8);
+    transform: scale(1.6);
     border-radius: 50%;
     border: 0.125rem dashed blue;
 }
