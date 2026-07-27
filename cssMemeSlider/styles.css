@@ -62,8 +62,8 @@ input[type="radio"] {
     margin-top: auto;
 }
 .slider-lab {
-    width: 3rem;
-    height: 3rem;
+    width: clamp(2.5rem, 5vw, 4rem);
+    height: clamp(2.5rem, 5vw, 4rem);
     cursor: pointer;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -73,7 +73,7 @@ input[type="radio"] {
     object-fit: cover;
 }
 .slider-lab img:hover {
-    transform: scale(1.5);
+    transform: scale(1.4);
 }
 #slide-1:checked ~ .slider-window .slider-images {
     transform: translateX(0);
@@ -138,7 +138,7 @@ input[type="radio"] {
 #slide-7:checked ~ .slider-info .slider-labels label[for="slide-7"] img,
 #slide-8:checked ~ .slider-info .slider-labels label[for="slide-8"] img,
 #slide-9:checked ~ .slider-info .slider-labels label[for="slide-9"] img {
-    transform: scale(1.6);
+    transform: scale(1.5);
     border-radius: 50%;
     border: 0.125rem dashed blue;
 }
